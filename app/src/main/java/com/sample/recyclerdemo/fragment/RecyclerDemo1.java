@@ -28,7 +28,7 @@ public class RecyclerDemo1 extends Fragment {
         if (view != null) {
             final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
             recyclerView.setHasFixedSize(true);
-            recyclerView.setAdapter(new DemoRecyclerViewAdapter());
+            recyclerView.setAdapter(new DemoRecyclerViewAdapter(R.layout.cardview_list_item));
             recyclerView.setLayoutManager(new LinearLayoutManager(activity));
             recyclerView.setItemAnimator(new DefaultItemAnimator());
         }

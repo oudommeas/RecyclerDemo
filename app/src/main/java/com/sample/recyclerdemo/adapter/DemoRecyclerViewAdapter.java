@@ -12,9 +12,15 @@ import com.squareup.picasso.Picasso;
 
 public class DemoRecyclerViewAdapter extends RecyclerView.Adapter<DemoRecyclerViewAdapter.ViewHolder> {
 
+    private int mLayoutRes;
+
+    public DemoRecyclerViewAdapter(final int layoutRes) {
+        mLayoutRes = layoutRes;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.cardview_list_item, viewGroup, false));
+        return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(mLayoutRes, viewGroup, false));
     }
 
     @Override
