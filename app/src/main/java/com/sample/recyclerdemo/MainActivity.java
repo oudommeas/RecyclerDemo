@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.sample.recyclerdemo.fragment.CardDemo1;
 import com.sample.recyclerdemo.fragment.RecyclerDemo1;
 import com.sample.recyclerdemo.intent.DemoIntent;
 
@@ -23,14 +22,13 @@ public class MainActivity extends FragmentActivity {
 
         final ListView listView = (ListView) findViewById(R.id.list);
         final Class[] items = new Class[]{
-            RecyclerDemo1.class,
-            CardDemo1.class
+                RecyclerDemo1.class
         };
-        final ArrayAdapter<Class> adapter = new ArrayAdapter<Class>(this, android.R.layout.simple_list_item_1, items){
+        final ArrayAdapter<Class> adapter = new ArrayAdapter<Class>(this, android.R.layout.simple_list_item_1, items) {
             @Override
             public View getView(int position, View convertView, ViewGroup parent) {
                 final View view = super.getView(position, convertView, parent);
-                ((TextView)view).setText(getItem(position).getSimpleName());
+                ((TextView) view).setText(getItem(position).getSimpleName());
                 return view;
             }
         };
